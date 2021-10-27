@@ -2,19 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
 class RootPage extends HookWidget {
-  const RootPage(
-    this.title, {
-    Key? key,
-  }) : super(key: key);
-
-  final String title;
+  const RootPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final counter = useState(0);
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: const Text('The Afterglow Diaries'),
       ),
       body: Center(
         child: Column(
