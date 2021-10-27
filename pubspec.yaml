@@ -18,3 +18,5 @@ dev_dependencies:
   flutter_gen_runner: ^4.0.1
 flutter:
   uses-material-design: true
+  assets:
+    - assets/md/
