@@ -1,28 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 
-class RootPage extends StatefulWidget {
-  const RootPage({Key? key, required this.title}) : super(key: key);
+class RootPage extends HookWidget {
+  const RootPage(
+    this.title, {
+    Key? key,
+  }) : super(key: key);
 
   final String title;
 
   @override
-  State<RootPage> createState() => _RootPageState();
-}
-
-class _RootPageState extends State<RootPage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
+    final counter = useState(0);
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(title),
       ),
       body: Center(
         child: Column(
@@ -32,14 +24,14 @@ class _RootPageState extends State<RootPage> {
               'You have pushed the button this many times:',
             ),
             Text(
-              '$_counter',
+              '${counter.value}',
               style: Theme.of(context).textTheme.headline4,
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: () => counter.value++,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),
