@@ -21,12 +21,19 @@ class RootPage extends HookWidget {
           children: photos
               .map(
                 (e) => MaterialButton(
+                  padding: EdgeInsets.zero,
                   onPressed: () => Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) => ArticlePage(e),
                     ),
                   ),
-                  child: CachedNetworkImage(imageUrl: e),
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints.expand(),
+                    child: CachedNetworkImage(
+                      imageUrl: e + '?w=200',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                 ),
               )
               .toList(),
