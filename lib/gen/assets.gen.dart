@@ -7,16 +7,8 @@
 
 import 'package:flutter/widgets.dart';
 
-class $AssetsMdGen {
-  const $AssetsMdGen();
-
-  String get test => 'assets/md/test.md';
-}
-
 class Assets {
   Assets._();
-
-  static const $AssetsMdGen md = $AssetsMdGen();
 }
 
 class AssetGenImage extends AssetImage {
