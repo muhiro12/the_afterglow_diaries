@@ -20,7 +20,7 @@ jobs:
           path: pages
 
       - name: Set ignored files
-        run: echo ${{ secrets.ENV }} | base64 -d > .env
+        run: echo ${{ secrets.ENV }} | base64 -d > dot.env
 
       - name: Cache
         uses: actions/cache@v2
