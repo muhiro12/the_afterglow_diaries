@@ -19,6 +19,10 @@ jobs:
           token: ${{ secrets.PRIVATE_GITHUB_TOKEN }}
           path: pages
 
+      - name: Set ignored files
+        run: |
+          echo ${{ secrets.ENV }} | base64 > .env
+
       - name: Cache
         uses: actions/cache@v2
         with:
