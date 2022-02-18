@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:the_afterglow_diaries/api_client.dart';
-import 'package:the_afterglow_diaries/article_page.dart';
+import 'package:the_afterglow_diaries/model/api_client.dart';
+import 'package:the_afterglow_diaries/page/article_page.dart';
 
 class RootPage extends HookWidget {
   const RootPage({Key? key}) : super(key: key);

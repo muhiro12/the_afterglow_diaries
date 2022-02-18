@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:the_afterglow_diaries/root_page.dart';
+import 'package:the_afterglow_diaries/page/root_page.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
