@@ -1,8 +1,7 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:the_afterglow_diaries/model/api_client.dart';
-import 'package:the_afterglow_diaries/page/article_page.dart';
+import 'package:the_afterglow_diaries/widget/photo_button.dart';
 
 class RootPage extends HookWidget {
   const RootPage({Key? key}) : super(key: key);
@@ -18,25 +17,7 @@ class RootPage extends HookWidget {
         bottom: false,
         child: GridView.count(
           crossAxisCount: 2,
-          children: photos
-              .map(
-                (e) => MaterialButton(
-                  padding: EdgeInsets.zero,
-                  onPressed: () => Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => ArticlePage(e),
-                    ),
-                  ),
-                  child: ConstrainedBox(
-                    constraints: const BoxConstraints.expand(),
-                    child: CachedNetworkImage(
-                      imageUrl: e + '?w=200',
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-              )
-              .toList(),
+          children: photos.map((e) => PhotoButton(e)).toList(),
         ),
       ),
     );
