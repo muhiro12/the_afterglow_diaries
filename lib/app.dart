@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:the_afterglow_diaries/page/root_page.dart';
+import 'package:the_afterglow_diaries/page/home_page.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -8,7 +8,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(),
-      home: const RootPage(),
+      home: const HomePage(),
     );
   }
 }

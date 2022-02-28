@@ -3,8 +3,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:the_afterglow_diaries/model/photo_controller.dart';
 import 'package:the_afterglow_diaries/widget/photo_grid_view.dart';
 
-class RootPage extends ConsumerWidget {
-  const RootPage({Key? key}) : super(key: key);
+class HomePage extends ConsumerWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
