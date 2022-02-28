@@ -17,7 +17,7 @@ final photoListProvider = FutureProvider(
     );
     return PhotoListResponse.fromJson(json.decode(response.body))
         .contents
-        .map((e) => e.photo.url)
+        .map((e) => e.photo)
         .toList();
   },
 );

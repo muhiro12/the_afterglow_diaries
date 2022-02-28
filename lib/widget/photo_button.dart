@@ -1,14 +1,15 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:the_afterglow_diaries/entity/photo.dart';
 import 'package:the_afterglow_diaries/page/article_page.dart';
 
 class PhotoButton extends StatelessWidget {
   const PhotoButton(
-    this.imageUrl, {
+    this.photo, {
     Key? key,
   }) : super(key: key);
 
-  final String imageUrl;
+  final Photo photo;
 
   @override
   Widget build(BuildContext context) {
@@ -16,13 +17,13 @@ class PhotoButton extends StatelessWidget {
       padding: EdgeInsets.zero,
       onPressed: () => Navigator.of(context).push(
         MaterialPageRoute(
-          builder: (context) => ArticlePage(imageUrl),
+          builder: (context) => ArticlePage(photo),
         ),
       ),
       child: ConstrainedBox(
         constraints: const BoxConstraints.expand(),
         child: CachedNetworkImage(
-          imageUrl: imageUrl + '?w=200',
+          imageUrl: photo.url + '?w=200',
           fit: BoxFit.cover,
         ),
       ),

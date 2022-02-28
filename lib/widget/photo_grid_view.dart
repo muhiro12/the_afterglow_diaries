@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:the_afterglow_diaries/entity/photo.dart';
 import 'package:the_afterglow_diaries/widget/photo_button.dart';
 
 class PhotoGridView extends StatelessWidget {
@@ -7,13 +8,13 @@ class PhotoGridView extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
-  final List<String> photoList;
+  final List<Photo> photoList;
 
   @override
   Widget build(BuildContext context) {
     return GridView.count(
       crossAxisCount: 2,
-      children: photoList.map((e) => PhotoButton(e)).toList(),
+      children: photoList.map((photo) => PhotoButton(photo)).toList(),
     );
   }
 }

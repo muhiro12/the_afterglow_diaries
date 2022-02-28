@@ -1,13 +1,14 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:the_afterglow_diaries/entity/photo.dart';
 
 class ArticlePage extends StatelessWidget {
   const ArticlePage(
-    this.imageUrl, {
+    this.photo, {
     Key? key,
   }) : super(key: key);
 
-  final String imageUrl;
+  final Photo photo;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class ArticlePage extends StatelessWidget {
       ),
       body: SafeArea(
         child: Center(
-          child: CachedNetworkImage(imageUrl: imageUrl),
+          child: CachedNetworkImage(imageUrl: photo.url),
         ),
       ),
     );
