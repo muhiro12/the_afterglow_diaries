@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:the_afterglow_diaries/model/photo_controller.dart';
-import 'package:the_afterglow_diaries/widget/photo_button.dart';
+import 'package:the_afterglow_diaries/widget/photo_grid_view.dart';
 
 class RootPage extends ConsumerWidget {
   const RootPage({Key? key}) : super(key: key);
@@ -16,10 +16,7 @@ class RootPage extends ConsumerWidget {
         bottom: false,
         child: Center(
           child: ref.watch(photoListProvider).when(
-                data: (photoList) => GridView.count(
-                  crossAxisCount: 2,
-                  children: photoList.map((e) => PhotoButton(e)).toList(),
-                ),
+                data: (photoList) => PhotoGridView(photoList),
                 error: (error, _, __) => Text(error.toString()),
                 loading: (_) => const CircularProgressIndicator(),
               ),
