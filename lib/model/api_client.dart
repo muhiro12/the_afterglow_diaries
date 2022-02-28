@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
+import 'package:the_afterglow_diaries/entity/photo_list_response.dart';
 
 class APIClient {
   final client = http.Client();
@@ -12,10 +13,10 @@ class APIClient {
     final response = await client.get(url, headers: {
       'X-MICROCMS-API-KEY': dotenv.get('X-MICROCMS-API-KEY'),
     });
-    final body = jsonDecode(response.body);
-    final contents = body['contents'];
-    final photoList = contents.map((e) => e['photo']);
-    final urlList = photoList.map((e) => e['url']).cast<String>().toList();
-    return urlList;
+    final json = jsonDecode(response.body);
+    return PhotoListResponse.fromJson(json)
+        .contents
+        .map((e) => e.photo.url)
+        .toList();
   }
 }
