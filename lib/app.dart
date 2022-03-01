@@ -1,22 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:the_afterglow_diaries/entity/photo.dart';
-import 'package:the_afterglow_diaries/page/article_page.dart';
-import 'package:the_afterglow_diaries/page/home_page.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:the_afterglow_diaries/router.dart';
 
-class App extends StatelessWidget {
-  App({Key? key}) : super(key: key);
+class App extends ConsumerWidget {
+  const App({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final router = ref.watch(routerProvider);
     return MaterialApp.router(
-      routeInformationParser: _router.routeInformationParser,
-      routerDelegate: _router.routerDelegate,
+      routeInformationParser: router.routeInformationParser,
+      routerDelegate: router.routerDelegate,
     );
   }
-
-  final _router = GoRouter(routes: [
-    HomePage.route,
-    ArticlePage.route,
-  ]);
 }

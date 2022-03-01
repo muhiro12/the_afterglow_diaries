@@ -6,7 +6,7 @@ import 'package:the_afterglow_diaries/app.dart';
 void main() async {
   await dotenv.load(fileName: 'production.env');
   runApp(
-    ProviderScope(
+    const ProviderScope(
       child: App(),
     ),
   );
