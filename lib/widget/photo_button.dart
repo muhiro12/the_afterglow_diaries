@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:the_afterglow_diaries/entity/photo.dart';
-import 'package:the_afterglow_diaries/page/article_page.dart';
+import 'package:the_afterglow_diaries/page/photo_page.dart';
 
 class PhotoButton extends StatelessWidget {
   const PhotoButton(
@@ -15,7 +15,7 @@ class PhotoButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialButton(
       padding: EdgeInsets.zero,
-      onPressed: () => ArticlePage.push(context, photo),
+      onPressed: () => PhotoPage.push(context, photo),
       child: ConstrainedBox(
         constraints: const BoxConstraints.expand(),
         child: CachedNetworkImage(

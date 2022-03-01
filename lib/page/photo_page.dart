@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:the_afterglow_diaries/entity/photo.dart';
 
-class ArticlePage extends StatelessWidget {
-  const ArticlePage(
+class PhotoPage extends StatelessWidget {
+  const PhotoPage(
     this.photo, {
     Key? key,
   }) : super(key: key);
 
   static final route = GoRoute(
-    path: '/article',
-    builder: (_, state) => ArticlePage(state.extra as Photo),
+    path: '/photo',
+    builder: (_, state) => PhotoPage(state.extra as Photo),
   );
 
   static void push(BuildContext context, Photo photo) {
