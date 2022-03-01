@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:the_afterglow_diaries/model/photo_controller.dart';
 import 'package:the_afterglow_diaries/widget/photo_grid_view.dart';
 
 class HomePage extends ConsumerWidget {
   const HomePage({Key? key}) : super(key: key);
+
+  static final route = GoRoute(
+    path: '/',
+    builder: (_, __) => const HomePage(),
+  );
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

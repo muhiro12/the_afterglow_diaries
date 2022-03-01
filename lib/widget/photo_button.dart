@@ -15,11 +15,7 @@ class PhotoButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialButton(
       padding: EdgeInsets.zero,
-      onPressed: () => Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (context) => ArticlePage(photo),
-        ),
-      ),
+      onPressed: () => ArticlePage.push(context, photo),
       child: ConstrainedBox(
         constraints: const BoxConstraints.expand(),
         child: CachedNetworkImage(
