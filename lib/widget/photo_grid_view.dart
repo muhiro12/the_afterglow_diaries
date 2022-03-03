@@ -12,8 +12,8 @@ class PhotoGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.count(
-      crossAxisCount: 2,
+    return GridView.extent(
+      maxCrossAxisExtent: 200,
       children: photoList.map((photo) => PhotoButton(photo)).toList(),
     );
   }
