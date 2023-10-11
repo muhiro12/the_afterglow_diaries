@@ -11,6 +11,7 @@ class App extends ConsumerWidget {
     final router = ref.watch(routerProvider);
     final theme = ref.watch(themeProvider);
     return MaterialApp.router(
+      routeInformationProvider: router.routeInformationProvider,
       routeInformationParser: router.routeInformationParser,
       routerDelegate: router.routerDelegate,
       theme: theme.copyWith(

@@ -23,8 +23,8 @@ class HomePage extends ConsumerWidget {
         child: Center(
           child: ref.watch(photoListProvider).when(
                 data: (photoList) => PhotoGridView(photoList),
-                error: (error, _, __) => Text(error.toString()),
-                loading: (_) => const CircularProgressIndicator(),
+                error: (error, _) => Text(error.toString()),
+                loading: () => const CircularProgressIndicator(),
               ),
         ),
       ),
